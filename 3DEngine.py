@@ -8,8 +8,8 @@ fen_princ = Tk()
 fen_princ.title("Test en 3d")
 fen_princ.geometry("600x600")
 
-monCanvas = Canvas(fen_princ, width=500, height=500, bg='white',borderwidth=0, highlightthickness=0)
-monCanvas.pack()
+Canvas = Canvas(fen_princ, width=500, height=500, bg='white',borderwidth=0, highlightthickness=0)
+Canvas.pack()
 
 
 def MakeAPoint(x,y,z):
@@ -43,7 +43,7 @@ def NewFrame():
         PosYS = (Camera[0] / PosZR) * PosYR
         
         if PosXS <= Camera[1] and PosYS <= Camera[2]:
-            monCanvas.create_rectangle(PosXS - 5 + 300,PosYS - 5 + 300,PosXS + 6 + 300,PosYS + 6 + 300)
+            Canvas.create_rectangle(PosXS - 5 + 300,PosYS - 5 + 300,PosXS + 6 + 300,PosYS + 6 + 300)
 
     for Face in Cubes:
         for Point in Face:
@@ -91,7 +91,7 @@ def NewFrame():
             print(PosAXS)
             print(PosDXS)
 
-            monCanvas.create_polygon(PosAXS + 300,PosAYS + 300,PosBXS + 300,PosBYS + 300,PosCXS + 300,PosCYS + 300,PosDXS + 300,PosDYS + 300)
+            Canvas.create_polygon(PosAXS + 300,PosAYS + 300,PosBXS + 300,PosBYS + 300,PosCXS + 300,PosCYS + 300,PosDXS + 300,PosDYS + 300)
 
             
 MakeCube(4,0,8,3)
